@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HighCharts 气泡图</title>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/highcharts/5.0.7/highcharts.js"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/highcharts/5.0.7/highcharts-more.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#bubbleChart').highcharts({
+                chart: {
+                    type: 'bubble',
+                    zoomType: 'xy'
+                },
+                title: {
+                    text: '气泡图'
+                },
+                series: [{
+                    // 颜色1
+                    title: {
+                        text: '气泡图'
+                    },
+                    data: [
+                        // 横 竖 大小
+                        [9911, 678, 99956],
+                        [94, 374, 860],
+                        [68, 576, 258],
+                        [64, 587, 656],
+                        [68, 567, 893],
+                        [74, 699, 263],
+                        [68, 233, 756],
+                        [51, 669, 230],
+                        [28, 223, 223],
+                        [27, 126, 201]
+                    ]
+                }, {
+                    // 颜色2
+                    data: [
+                        [22534, 12034, 82347],
+                        [22566, 72565, 52679],
+                        [12167, 52774, 82776],
+                        [82776, 52885, 92883],
+                        [52887, 32787, 52788],
+                        [92078, 62543, 42344],
+                        [32491, 32453, 12457],
+                        [92547, 52453, 52546],
+                        [12545, 62457, 42458],
+                        [52554, 22445, 82441]
+                    ]
+                }, {
+                    // 颜色3
+                    data: [
+                        [4347, 4457, 2561],
+                        [2670, 1772, 4676],
+                        [6787, 7666, 9771],
+                        [3868, 3780, 6660],
+                        [5778, 9768, 6674],
+                        [8761, 8817, 3480],
+                        [8343, 6450, 1433],
+                        [6227, 7678, 7455],
+                        [6244, 1562, 1560],
+                        [3560, 7657, 8442]
+                    ]
+                }]
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="bubbleChart" style="width: 1200px; height: 550px; margin: 0 auto"></div>
+</body>
+
+</html>

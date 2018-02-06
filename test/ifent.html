@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li attr-src="https://www.baidu.com">aaa</li>
+        <li attr-src="http://www.ifeng.com">bbb</li>
+        <li attr-src="https://www.google.com">ccc</li>
+    </ul>
+    <div id="if"></div>
+    <script type="text/javascript">
+        $(function() {
+            $('li').click(function() {
+                var iframe = '<iframe src="' + $(this).attr('attr-src') + '" frameborder="0"></iframe>';
+                $('#if').html(iframe);
+            })
+        });
+    </script>
+</body>
+
+</html>

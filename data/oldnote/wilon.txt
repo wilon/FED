@@ -1,0 +1,92 @@
+spp
+    修改：config.json、spp.php
+    添加：protected/temp 权限755
+    清缓存  /tmp
+
+MyVim
+ * 书签展开、文件缓存
+ * 打开书签、自动cd
+
+Git: 先commit再pull再push （自动解决冲突，不行就手动解决冲突再重复一次）
+SVN: 先更新再提交
+
+Sublime Text 3 插件：
+    Emmet:
+        emmet快速编辑html。
+    SublimeLinter:
+        自动识别错误，并标红。
+        再安装SublimeLinter-php，需配置里，path->windows->"F:\\xampp\\php"，右键设置fill\no clo..
+    Alignment:
+        一键代码对齐
+    Snippets:
+        自定义代码片段(ST3自带)
+    DocBlockr:
+        快速注释,（函数上方）输入'/*'或'/**'，按enter。
+        设置单行注释按enter不注释"jsdocs_extend_double_slash": false,
+    Insert Nums:
+        快速插入排列数字、字母，方法如下——
+        1. 按住ctrl，鼠标点击左键，使光标活动在多行。若不行则有按键冲突。
+        2. 按ctrl+alt+n，OK了，也支持字母，下面输入a 1 。
+    Side Bar:
+        左侧文件右键增强。
+    SublimeCodeIntel:
+        alt+左键点击函数，自动跳转
+        [ctrl+shift+space]自动提示函数参数
+        自动加载提示自写函数名，但对php自带函数不如默认，Open file: Data\Packages\SublimeCodeIntel\SublimeCodeIntel.py, The 1401 line, Modify ''%s〔%s〕'' to '%s'。
+    Tag:
+        html标签格式化等操作
+    jQuery:
+        jQuery方法自动完成，下载snippets包https://github.com/SublimeText/jQuery/，放入/data/packages/user/sbulime-snippets
+    FavoriteFiles:
+        收藏夹。
+    Bracket Highlighter:
+        匹配括号，括号内容操作
+    Function Name Display:
+        显示函数参数，SublimeCodeIntel已有此功能
+    IMESupport:
+        中文输入法光标跟随
+    ColorHighlighter:
+        文本内颜色高亮显示，选择颜色
+    OpenInclude:
+        快速打开文件，只要有路径
+
+
+注册码2015-3-28 14:44:57可用
+Andrew Weber
+Single User License
+EA7E-855605
+813A03DD 5E4AD9E6 6C0EEB94 BC99798F
+942194A6 02396E98 E62C9979 4BB979FE
+91424C9D A45400BF F6747D88 2FB88078
+90F5CC94 1CDC92DC 8457107A F151657B
+1D22E383 A997F016 42397640 33F41CFC
+E1D0AE85 A0BBD039 0E9C8D55 E1B89D5D
+5CDB7036 E56DE1C0 EFCC0840 650CD3A6
+B98FC99C 8FAC73EE D2B95564 DF450523
+
+Everything搜索:
+    *此文件名包含abc且有123——
+        S:abc 123
+        R:abcyyy123.php
+    此文件名包含abc或者包含123——
+        S:abc|123
+        R:abczz.php  123yy.txt
+    此文件名包含abc且不包含123——
+        S:abc !123
+        R:abczz.php  (不会有abciii123.py)
+    *abc文件夹下包含123——
+        S:abc\ 123
+        R:1233.php  (注意path)
+    *此文件包含abc且文件大于5M
+        S:abc size:>5mb
+        R:1233.php  (注意path)
+
+    *匹配任意个字符
+    ?只匹配一个字符
+
+    abc ???
+
+import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+$.getJSON('/path/to/file', function(d) {
+
+})

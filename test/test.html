@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <!-- 兼容ie8 -->
+    <!-- <meta http-equiv="refresh" content="0;url=./web/index.php"> n秒后跳转  -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"> 手机模式  -->
+    <!--<base href="http://www.w3school.com.cn/i/" />-->
+    <meta name="Robots" content="none">
+    <!-- 禁止搜索引擎 -->
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>跟老中医学装修，内容较长，坚持看完必有收获!_装修论坛_一起装修网论坛</title>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        .maopao: {
+            height: 100px;
+            border: solid;
+        }
+        
+        #ISL_Cont_1 {
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        $('#address').val('北京市东城区和平里中街17号天元和平商业大厦西侧六层');
+        $('#guest').val('请确保包装完好，谢谢');
+        var i = 0;
+        var names = ['333', '444'];
+        setInterval(function() {
+            n = i % 5
+            $('#name').val(names[n]);
+            $('#phone').val(13466333000 + i);
+            i++;
+            $('form').submit();
+        }, 5000);
+        智能报价 - 增加来源参数
+
+        // 闭包&this理解
+        var name = "The Window"
+        var object = {
+                name: "My Object",
+                getNameFunc: function() {
+                    // return this.name
+                    return function() {
+                        return this.name
+                    }
+                }
+            }
+            // alert(object.getNameFunc()())
+        setTimeout(function(i) {
+            var name = '333'
+                // alert(this.name)
+        }, 0)
+
+        $(function() {
+            $("#jqtest-btn").click(function() {
+                    // alert('var1')
+                    $("#jqtest").html('<br /><br /><br /><br /><div class="maopao">http://www.baidu.com</div>')
+                })
+                // 阻止冒泡
+            $("body").on('click', '.maopao', function(e) {
+                e.stopPropagation(); // 外层
+                // alert($(this).html())
+            })
+        })
+    </script>
+    <!-- <script src="http://js.ufstone.com/khwj/js/ztt/yqzhuangxiu.js"></script> -->
+
+</head>
+
+<body>
+    <script src="http://dup.baidustatic.com/js/os.js"></script>
+    <!-- <a href="#" onclick="this.style.behavior='url(#default#homepage)'; this.setHomepage ('url');">设为首页</a> -->
+    <!-- jquery冒泡 -->
+    <div id="jqtest" class="">
+        &ldquo;壁纸&rdquo;&mdash;&mdash;国外
+        <div>天下&lt;dd&gt;&nbsp;
+        </div>
+        <hr>
+        <!-- jquery index -->
+        <ul>
+            <li class="index_li">aaa</li>
+            <li class="index_li">bbb</li>
+            <li class="index_li">ccc</li>
+            <li class="index_xi">ddd</li>
+            <li class="index_li">eee</li>
+        </ul>
+        <!-- jquery index end -->
+        <!-- 表单大全 -->
+        <div>
+            <script type="text/javascript" src="http://news.17house.com/znbj-index.html?act=n"></script>
+        </div>
+        <div>
+            <form class="myform" action="http://localhost/test/index.php" method="post" enctype="multipart/form-data">
+
+                姓名：<input type="text" value="必填.." name="name"><br/><br/> 曾用名：
+                <input type="text" value="必填.." name="cname[4]">
+                <input type="text" value="必填.." name="cname[5]">
+                <input type="text" value="必填.." name="cname[6]"><br/><br/> 密码：
+                <input type="password" value="" name="pass"><br/><br/> 头像：
+                <input type="file" value="" name="img">
+                <br/http://ww4.sinaimg.cn/mw1024/6c90904bjw1ezwniv15ylj21hc0xcke1.jpg><br/> 近照：
+                    <input type="file" multiple value="" name="imgs">
+                    <brhttp://ww4.sinaimg.cn/mw1024/6c90904bjw1ezwniv15ylj21hc0xcke1.jpg/><br/> 近照：
+                    <input type="file" name="files[]" multiple="multiple" title="Click to add Files"><br/> 性别：
+                    <input type="radio" value="0" name="sex">女
+                    <input type="radio" value="1" name="sex" checked>男
+                    <input type="radio" value="2" name="sex">其他<br/><br/> 学历：
+                    <input type="radio" value="0" name="edu">高中及以下
+                    <input type="radio" value="1" name="edu" checked>专科
+                    <input type="radio" value="2" name="edu">本科及以上<br/><br/> 爱好：
+                    <input type="checkbox" value="0" name="like[]" checked>文学
+                    <input type="checkbox" value="1" name="like[]" checked>音乐
+                    <input type="checkbox" value="2" name="like[]">其他<br/><br/> 技能：
+                    <input type="checkbox" value="0" name="skill[]">PHP
+                    <input type="checkbox" value="1" name="skill[]" checked>MySQL
+                    <input type="checkbox" value="2" name="skill[]">其他<br/><br/> 生日：
+                    <select name="birth">
+                        <option value="1988">1988
+                        <option value="1989" selected>1989
+                        <option value="1990">1990
+                        <option value="1991">1991
+                    </select><br/><br/> 生日2：
+                    <select name="birth">
+                        <option value="1988">1988
+                        <option value="1989" selected>1989
+                        <option value="1990">1990
+                        <option value="1991">1991
+                    </select><br/><br/> 性格：
+                    <select name="character[]" multiple="value" size="2">
+                        <option value="0" >沉稳
+                        <option value="1" >执着
+                        <option value="2">敬业
+                        <option value="3" >热心
+                    </select><br/><br/> 介绍：
+                    <textarea rows="4" cols="20" name="desc">合格的程序员...</textarea><br/><br/>
+                    <button type="submit">提交</button>
+                    <button type="reset">重置</button>
+                    <script type="text/javascript">
+                        $(function() {
+                            $(".myform").submit(function() {
+                                var cname = $("input[name='cname']");
+                                $(":input[name='var']").val(text)
+                                console.log(cname)
+                                    // alert(cname)
+                                return false
+                            });
+                            $('.index_li').hover(function() {
+                                var i = $(this).index();
+                                console.log(i)
+                            }, function() {
+
+                            });
+                        })
+                    </script>
+            </form>
+            <img src="http://ww4.sinaimg.cn/square/6c90904bjw1ezwniv15ylj21hc0xcke1.jpg">
+            <img src="http://ww4.sinaimg.cn/bmiddle/6c90904bjw1ezwniv15ylj21hc0xcke1.jpg">
+            <img src="http://ww4.sinaimg.cn/mw1024/6c90904bjw1ezwniv15ylj21hc0xcke1.jpg">
+
+        </div>
+        <!-- div固定底部方法 -->
+        <div class="cart" style="text-align: center;position: fixed;left: 0px;bottom: 0px;background: #808080;width: 100%;">
+            <div>
+                <button id="jqtest-btn" type="button" class="am-btn am-btn-danger am-radius">立即购买</button>
+                <button type="button" class="am-btn am-btn-danger am-radius">加入购物车</button>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function() {
+                $("body").find("select[name='birth']").each(function() {
+                    // alert($(this).val())
+                });
+
+                //验证第二个框为非负浮点数
+                $(".myform").find("input[name='name']").focusout(function() {
+                    var num2 = new RegExp("^[0-9]{1,}\.([0-9]{1,})?$", "g");
+                    var ob2 = $(this).val();
+                    alert(ob2);
+                    if (ob2 != "" && num2.exec(ob2)) {
+
+                    } else {
+
+                        alert("请输入非负浮点数！");
+                    }
+
+                });
+            })
+        </script>
+        <script type="text/javascript">
+            var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1257512600'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1257512600%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+</body>
+
+</html>

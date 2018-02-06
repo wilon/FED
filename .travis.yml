@@ -1,0 +1,56 @@
+branches:
+  only:
+    - master
+os:
+  - linux
+
+language: node_js
+
+dist: trusty
+
+sudo: required
+
+node_js:
+  - "node"
+
+before_install:
+  - sudo add-apt-repository -y ppa:dhor/myway
+  - sudo apt-get -qq update
+  - sudo apt-get -y install graphicsmagick
+  - sudo apt-get -y install imagemagick
+
+install:
+  - npm install
+
+env:
+ global:
+   - GH_REF: github.com/wilon/wilon.github.io.git
+
+script:
+  # git settings
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "travis@travis-ci.org"
+  - git remote set-url origin https://${GH_TOKEN}@${GH_REF}
+  - git checkout master
+  # update
+  - npm start
+  - git show | grep 'Author.*<travis@' || gulp sitemap
+
+after_script:
+  # commit
+  - ls -l cache/index.html index.html
+  - cat cache/*.json
+  - git add .
+  - git commit -m "Travis CI Auto Commit" &
+  - git push --force origin master
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    recipients:
+      - wilonx@163.com
+    on_success: never
+    on_failure: never

@@ -1,0 +1,23 @@
+VIM_DESC    ACTION+MOVE；
+VIM_ACTIONA  c 删除后插入动作；d 删除动作；y 复制动作；v 选择动作；
+VIM_ACTION  r 单字母替换动作；g 大小写转换动作；m 标记动作；z 折叠动作；p 粘贴动作
+VIM_INSERT  i 光标前；I 行首；a 光标后；A行尾；C 删除至行尾
+VIM_INSERT  o 光标下一行；O 光标上一行；s 删光标后一个字符；S 清除全行
+VIM_MOVE    ACTIONA i【 ' " [ { ( ) } ] 】 匹配引号或括号内
+VIM_MOVE    [num] tx 匹配到单个字符x光标前；fx光标后
+VIM_MOVE    /string 匹配到string（不包含）
+VIM_MOVE    H/M/L 匹配到窗口的顶部、中间、和底部
+VIM_MOVE    [num]( 匹配到句首  )句尾 {段首 }段尾 ]]下一个方法名 [[上一个方法名
+VIM_FOLD    zj/k 上/下一个折叠；:set fdm=indent/manual 智能/手工模式
+VIM_FOLD    zf 创建折叠；zo 打开折叠；zc 关闭折叠；zi 展开、折叠
+VIM_FOLD    zr 递归打开折叠；zR 打开所有；zm 递归折叠；zM 折叠所有
+VIM_WINDOW  ctrl+w+h/j/k/l 移到窗口；ctrl+w 切换窗口
+VIM_WINDOW  :res num 调整窗口高度；ctrl+w +或- 增加/减小窗口高度；
+VIM_WINDOW  :vertical res(ize) num 调整窗口宽度；
+VIM_MARKS   ma 设定标记a；`a 跳到标记a
+VIM_MARKS   `或' 跳转前的位置； " 最后编辑的位置； [ 最后修改的位置的开头； ] 最后修改的位置的结尾；
+VIM_MARKS   :delmarks a 删除标签a；:delmarks! 删除所有标签，不包括[A-Z]和[0-9]标签。
+VIM_BUFFER  :ls 缓冲区文件列表；:buffer 打开缓冲区文件；:Wilondiff 当前文件跟缓冲区文件对比
+VIM_STRING  v:u/U 选中小/大写转换；gu/U 小/大写转换，搭配VIM_MOVE；
+VIM_OTHER   zt/zz/zb 光标所在行移动窗口的顶端、中间或底部
+VIM_OTHER   " 剪切板
