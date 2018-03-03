@@ -112,11 +112,9 @@
 
 ```
 
-### vscdoe 设置记录 windows
-```shell
-    # " >> ~/.bashrc
-    export GOROOT=C:\Go\                        # go 安装目录
-    export GOPATH=$HOME/go                      # go 工作目录
-    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin   # go 执行二进制文件目录
-    PROMT_COMMAND='history -a'                  # 记录终端日志
+### vscdoe windows 设置 gitconfig git-bash
+```shell    
+    # setting:    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    # win-git 安装时需选上允许credential，<a href="http://t.cn/RECNQ5r">win git 允许凭证</a>
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilon/oh-my-zsh/master/tools/win_gitbash_install.sh)"
 ```
