@@ -2,7 +2,7 @@ branches:
   only:
     - master
 os:
-  - centos
+  - linux
 
 language: node_js
 
@@ -12,6 +12,12 @@ sudo: required
 
 node_js:
   - "node"
+
+before_install:
+  - sudo add-apt-repository -y ppa:dhor/myway
+  - sudo apt-get -qq update
+  - sudo apt-get -y install graphicsmagick
+  - sudo apt-get -y install imagemagick
 
 install:
   - npm install
