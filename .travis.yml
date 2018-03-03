@@ -1,6 +1,8 @@
 branches:
   only:
     - master
+os:
+  - centos
 
 language: node_js
 
