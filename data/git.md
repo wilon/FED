@@ -128,6 +128,7 @@
 ```shell
     git clone https://github.com/Wilon/mynote.git    # 克隆一个项目
     git reset --hard HEAD~1    # 回退所有内容到上N个版本，数字可变
+    git config user.name "Travis CI" && git config user.email "travis@travis-ci.org" && date > data/pushdata && git commit -a -m "$(date)" && git push    # 自动提交且不产生activity
 ```
 
 ### install 安装最新版
