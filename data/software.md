@@ -110,10 +110,21 @@
     ⌘ 2   # 打开上一个编辑器
     ⌘ 3   # 打开下一个编辑器
 
+    # 光标移动
+    On Windows:
+    Alt+← .. navigate back
+    Alt+→ .. navigate forward
+    On Mac:
+    Ctrl+- .. navigate back
+    Ctrl+Shift+- .. navigate forward
+    On Ubuntu Linux:
+    Ctrl+Alt+- .. navigate back
+    Ctrl+Shift+- .. navigate forward
+
 ```
 
 ### vscdoe windows 设置 gitconfig git-bash
-```shell    
+```shell
     # setting:    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     # win-git 安装时需选上允许credential，<a href="http://t.cn/RECNQ5r">win git 允许凭证</a>
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilon/oh-my-zsh/master/tools/win_gitbash_install.sh)"
