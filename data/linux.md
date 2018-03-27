@@ -169,6 +169,12 @@
     docker build -t <image name> .
 ```
 
+### docker Dockerfile
+```shell
+    构建镜像时会执行Dockerfile中的RUN命令
+    容器启动的时候会执行Dockerfile中的CMD命令
+```
+
 ### 输出分类、级别
 ```shell
     php -v > /dev/null 2>&1    # 不保留所有输出
