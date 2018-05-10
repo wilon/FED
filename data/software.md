@@ -84,6 +84,13 @@
       http://wilon.oschina.io/static//channel_v3.json    # oschina 国内比较快
 ```
 
+### GitHub 浏览代码快捷键 key
+```shell
+    按 t 键会打开一个文件浏览器
+    按 l 键会显示跳转到行的工具
+    按 s 键会激活顶端的搜索栏
+```
+
 ### Atom 更换 npm 源
 ```shell
     ~/.atom/.apmrc 文件添加一行： registry = https://registry.npm.taobao.org
