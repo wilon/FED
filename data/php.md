@@ -29,6 +29,8 @@
 ```html
     <a href="https://cs.laravel-china.org/#db">https://cs.laravel-china.org/#db</a>
     ->get() 对应类：illuminate/support/Collection.php
+    # 获取单个字段的数组
+    ->pluck('ipgroup_id')->all();
 ```
 
 ### 微信资源搜集
