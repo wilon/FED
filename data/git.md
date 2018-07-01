@@ -124,6 +124,13 @@
     wget <a href="https://raw.githubusercontent.com/wilon/oh-my-zsh/master/templates/gitconfig.zsh-template" target="_blank">https://raw.githubusercontent.com/wilon/oh-my-zsh/master/templates/gitconfig.zsh-template</a> -O ~/.gitconfig
 ```
 
+### 回退一些东西
+```shell
+    git clean -n     # 是一次clean的演习, 告诉你哪些文件会被删除. 记住他不会真正的删除文件, 只是一个提醒
+    git clean -df    # 删除当前目录下没有被track过的文件和文件夹
+    git clean -xf    # 删除当前目录下所有没有track过的文件. 不管他是否是.gitignore文件里面指定的文件夹和文件
+```
+
 ### 其他
 ```shell
     git clone https://github.com/Wilon/mynote.git    # 克隆一个项目
