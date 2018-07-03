@@ -289,6 +289,9 @@
     curl -k https://www.baidu.com    # 允许不使用证书到SSL站点
     curl -v https://www.baidu.com    # 显示详情
     curl -s https://www.baidu.com    # 静默模式
+    curl -d "param1=value1&param2=value2" "http://www.baidu.com"    # post请求
+    curl -l -H "Content-type: application/json" -X POST -d '{"phone":"135xxxxxxxx","password":"test"}' http://domain/apis/users.json    # json格式的post请求
+    curl http://adms.test.com/api/getUserInfo\?auth\=$(echo -n $(date +%s) | md5sum | awk '{printf $1"YOUR_KEY";}' | md5sum | awk '{printf $1;}')    # 两次 md5 的验证例子
 ```
 
 ### 查看系统信息
