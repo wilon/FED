@@ -314,6 +314,7 @@
     ls -lR | grep "^d" | wc -l    # 查看某文件夹下目录的个数，包括子目录里的。
     ll --full-time    # 查看文件的完整时间信息
     ll -t | head -n 5    # 查看最新的5个文件
+    find . -maxdepth 1 -type d -print0 | xargs -0 -I {} sh -c 'echo -e $(find {} | wc -l) {}' | sort -n    # 统计当前目录下每个文件夹包含的文件数
 ```
 
 ### composer安装
