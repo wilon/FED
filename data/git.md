@@ -140,15 +140,18 @@
 
 ### install 安装最新版
 ```shell
-    # 1. 下载 tar 包，https://github.com/git/git/releases
-    # 2. 解压
+    # 1. 依赖
+    yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel
+    apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev
+    # 2. 下载 tar 包，https://github.com/git/git/releases 解压
     wget https://github.com/git/git/archive/v2.15.0.tar.gz
     tar -zxvf v2.15.0.tar.gz
     cd git-2.15.0/
-    make prefix=/usr/local/git all
-    make prefix=/usr/local/git install
-    echo 'export PATH=$PATH:/usr/local/git/bin' >> /etc/bashrc
-    source /etc/bashrc
+    # 3. 安装
+    make prefix=/usr/local all
+    make prefix=/usr/local install
+    # 4. 加入到环境变量，或者覆盖旧的git
+    /usr/local/bin/git version
 ```
 
 
