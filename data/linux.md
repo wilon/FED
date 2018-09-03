@@ -33,6 +33,7 @@
 ```shell
     awk ‘!a[$0]++’ path/to/file    # 去除重复行
     cat cache/smtp.log | grep "To" | awk '{print $9;}' | sort | uniq -c    # 查看邮件日志 | 有“To”的行 | 列出用户 | 排序 | 统计用户出现次数
+    awk '{print length($0), $0}' /tmp/awords.log | sort -nr | head -n 7    # 统计出文件内字符最多的7行
     for i in `ls`; do cp -f $i `echo $i | sed 's/^\([0-9]\..*md\)$/0\1/'`; done    # 目录下 1.xx.md 2.xx.md 复制为 01.xx.md 02.xx.md
     for i in `ls`; do cp -f $i `echo $i | sed 's/\..*px_.*_.*.net.png$/.png/'`; done    # 批量修改多余文件后缀
     sed -i "s/oldstring/newstring/g" `grep oldstring -rl yourdir`    # 把目录下所有文件的 oldstring 替换为 newstring
