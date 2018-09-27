@@ -103,7 +103,7 @@
     minimap # 代码缩略图
 ```
 
-### vscdoe 快捷键
+### vscode 快捷键
 ```shell
     # ⌘ mac command; win win
 
@@ -130,7 +130,7 @@
 
 ```
 
-### vscdoe windows 设置 gitconfig git-bash
+### vscode windows 设置 gitconfig git-bash
 ```shell
     # setting:    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     # win-git 安装时需选上允许credential，<a href="http://t.cn/RECNQ5r">win git 允许凭证</a>
