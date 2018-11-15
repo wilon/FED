@@ -191,9 +191,20 @@
 
 ### 比较有用的命令
 ```shell
-    php -i | grep -i xxxx  // 查看xxxx信息
-    php -i | grep -i php.ini  // 查看php.ini信息
-    php -i | grep -i extension  // 查看php扩展信息
+    # PATH
+    php -i | grep configure         # 可以查看【PHP安装目录】位置
+    php -i | grep php.ini           # 可以查看【php.ini】位置
+    php -i | grep -i extension      # 查看php扩展信息
+    ps aux | grep php-fpm.conf      # 可以查看【php-fpm.conf】位置
+    php-fpm -t                      # 可以查看【php-fpm.conf】位置
+
+    export PATH=$PATH:PHP安装目录/php/bin    # php命令加入path
+
+    # CONFI 配置文件
+    php -v
+
+    # TEST
+    wget https://wilon.github.io/static/p.php    # 雅黑PHP探针
 ```
 
 ### Windows安装php扩展

@@ -90,21 +90,6 @@
     sudo ln -s /usr/bin/nodejs /usr/bin/node    # Ubuntu
 ```
 
-### PHP help
-```shell
-    # path
-    php -i | grep configure    # 可以查看【PHP安装目录】位置
-    php -i | grep php.ini    # 可以查看【php.ini】位置
-    ps aux | grep php-fpm.conf    # 可以查看【php-fpm.conf】位置
-    php-fpm -t    # 可以查看【php-fpm.conf】位置
-
-    export PATH=$PATH:PHP安装目录/php/bin    # php命令加入path
-    # confi 配置文件
-    php -v
-    # test
-    wget https://wilon.github.io/static/p.php    # 雅黑PHP探针
-```
-
 ### other
 ```shell
     echo $PATH    # 查看可以PATH，按优先级排列
