@@ -26,11 +26,22 @@
 ```
 
 ### Laravel DB 操作技巧
-```html
-    <a href="https://cs.laravel-china.org/#db">https://cs.laravel-china.org/#db</a>
-    ->get() 对应类：illuminate/support/Collection.php
-    # 获取单个字段的数组
-    ->pluck('ipgroup_id')->all();
+```php
+    # Doc: https://cs.laravel-china.org/#db
+    $table = DB::table('user');
+    $table->get()                       # 对应类：illuminate/support/Collection.php
+    $table->pluck('ipgroup_id')->all(); # 获取单个字段的数组
+    $table->where([                     # 多个where条件1种写法
+        'uid' => 'xiaoming',
+        'ip' => '192.90.1.140',
+    ])->all();
+    $table->where([                     # 多个where条件2种写法
+        ['uid', 'xiaoming'],
+        ['ip', '192.90.1.140'],
+    ])->all();
+    $table->where('uid', 'xiaoming')    # 多个where条件3种写法
+        ->where('ip', '192.90.1.140')
+        ->all();
 ```
 
 ### 微信资源搜集
