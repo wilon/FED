@@ -80,7 +80,8 @@
     i    # ignore，忽略大小写
     # 删除示例
     [num]dd    # 向下删除[num]1行
-    :g[v]/INSERT.*99cms_news\c/d    # 删除包含[不包含]字串‘INSERT.*99cms_news\c’的行  \c忽略大小写
+    :g/INSERT.*99cms_news\c/d       # 删除包含[不包含]字串‘INSERT.*99cms_news’的行   \c忽略大小写
+    :v/INSERT.*99cms_news\c/d       # 删除不包含字串‘INSERT.*99cms_news’的行        \c忽略大小写
     :g/^\s*$/d    # 删除空行
     :g/^\(.*\)$\n\1$/d    # 删除重复行（ 需先 :sort ）
     :%s/\s\+$//g    # 删除行尾空格
