@@ -37,8 +37,9 @@
     for i in `ls`; do cp -f $i `echo $i | sed 's/^\([0-9]\..*md\)$/0\1/'`; done    # 目录下 1.xx.md 2.xx.md 复制为 01.xx.md 02.xx.md
     for i in `ls`; do cp -f $i `echo $i | sed 's/\..*px_.*_.*.net.png$/.png/'`; done    # 批量修改多余文件后缀
     sed -i "s/oldstring/newstring/g" `grep oldstring -rl yourdir`    # 把目录下所有文件的 oldstring 替换为 newstring
-    sed -i "s/garden/mirGarden/g" ./readme.md    # 将文件内的字符替换
-    sed -i "s/garden/mirGarden/g" `ls`    # 将当前文件夹下所有文件内的字符替换
+    sed -i "s/garden/mirGarden/g" ./readme.md   # 将文件内的字符替换
+    sed -i "s/garden/mirGarden/g" `ls`          # 将当前文件夹下所有文件内的字符替换
+    ed 's/=.*/=xxx/' .env > .env.example        # 生成.env的.env.example
 
 ```
 
@@ -427,4 +428,18 @@
     cat [-n] 文件名    # 所有内容[显示行号]
     more 文件名    # 分屏显示，space|b|q 翻页下|上|退出
     head [-n 2] 文件名    # 显示文件头[两行]
+```
+
+### redis-cli
+```shell
+    auth password123
+    keys *long
+    get weilong
+    set weilong thisisweilong
+    monitor     # 查看实时操作
+```
+
+### Redis
+```shell
+    redis-cli -h 127.0.0.1 -a passwd123 monitor     # 查看实时操作
 ```
