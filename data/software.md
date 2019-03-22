@@ -6,6 +6,15 @@
     修改代理设置：PROXY 127.0.0.1:端口; DIRECT
 ```
 
+### GitHub 搜索技巧
+```html
+    https://help.github.com/en/articles/about-searching-on-github
+    <!-- 搜代码 -->
+    user: USERNAME  按用户搜代码
+    org: ORGNAME    按组织搜代码
+    repo: USERNAME/REPOSITORY   按项目搜代码
+```
+
 ### MacOS brew 安装PHP环境
 ```shell
     brew update    # 获取最新版brew
