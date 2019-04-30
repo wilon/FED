@@ -52,7 +52,7 @@ gulp.task('imageresize', function() {
 });
 
 // 合并、压缩图片
-gulp.task('sprite', ['imageresize'], function() {
+gulp.task('sprite', gulp.series('imageresize', function() {
     // Generate our spritesheet
     var spriteData = gulp.src(['src/images/logo.png', 'cache/*.png', "!cache/logo.png"])
         .pipe(spritesmith({
@@ -71,10 +71,10 @@ gulp.task('sprite', ['imageresize'], function() {
         .pipe(gulp.dest('cache'));
     // Return a merged stream to handle both `end` events
     return merge(imgStream, cssStream);
-});
+}));
 
 // 合并，压缩 css 文件
-gulp.task('css', ['sprite'], function() {
+gulp.task('css', gulp.series('sprite', function() {
     del('./static/wilonblog-*.min.css');
     return gulp.src(['./src/stylesheets/*.css', 'cache/sprite.css'])
         .pipe(concat('wilonblog.min.css')) // 合并
@@ -83,7 +83,7 @@ gulp.task('css', ['sprite'], function() {
         .pipe(gulp.dest('./static/')) // 保存
         .pipe(rev.manifest('css.json')) // 生成一个重命名用json
         .pipe(gulp.dest('./cache/'));
-});
+}));
 
 
 // 合并md
@@ -98,7 +98,7 @@ gulp.task('md', function() {
 });
 
 // sitemap
-gulp.task('sitemap', ['md'], function() {
+gulp.task('sitemap', gulp.series('md', function() {
     var urls = [];
     Array.prototype.addUrl = function(url) {
         return this.push({
@@ -131,52 +131,52 @@ gulp.task('sitemap', ['md'], function() {
         urls: urls
     });
     return fs.writeFileSync("sitemap.xml", sitemap.toString());
-});
+}));
 
 // 替换模板文件内字符串
-gulp.task('rev', ['js', 'css', 'md'], function() {
+gulp.task('rev', gulp.series(gulp.parallel('js', 'css', 'md'), function() {
     return gulp.src(['./cache/*.json', './src/*.html']) // 读取需要进行替换的文件
         .pipe(revCollector()) // 执行文件内js、css名的替换
         .pipe(gulp.dest('./cache/')); // 替换后的文件输出的目录
-});
+}));
 
 // 默认任务
-gulp.task('default', ['rev'], function() {
+gulp.task('default', gulp.series('rev', function() {
     return gulp.src('cache/*.html')
         .pipe(htmlmin({ collapseWhitespace: true, minifyJS: true }))
         .pipe(gulp.dest('.'));
-});
+}));
 
 // watch任务
-gulp.task('revjs', ['js'], function() {
+gulp.task('revjs', gulp.series('js', function() {
     gulp.src(['./cache/*.json', './src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest('./cache/'));
-});
-gulp.task('revcss', ['css'], function() {
+}));
+gulp.task('revcss', gulp.series('css', function() {
     gulp.src(['./cache/*.json', './src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest('./cache/'));
-});
-gulp.task('revmd', ['md'], function() {
+}));
+gulp.task('revmd', gulp.series('md', function() {
     gulp.src(['./cache/*.json', './src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest('./cache/'));
-});
+}));
 gulp.task('revhtml', function() {
     gulp.src(['./cache/*.json', './src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest('./cache/'));
 });
-gulp.task('watch', ['default'], function() {
+gulp.task('watch', gulp.series('default', function() {
     gulp.watch('data/*.md', ['revmd']);
     gulp.watch('src/javascripts/*.js', ['revjs']);
     gulp.watch(['src/stylesheets/*.css', 'src/images/*.png'], ['revcss']);
     gulp.watch('src/index.html', ['revhtml']);
-});
+}));
 
 // server任务
-gulp.task('server', ['watch'], function(done) {
+gulp.task('server', gulp.series('watch', function(done) {
     let watchOptions = {
         cwd: './',
         ignoreInitial: true,
@@ -198,4 +198,4 @@ gulp.task('server', ['watch'], function(done) {
             done();
         }
     });
-});
+}));
