@@ -46,7 +46,7 @@
 ### ind 文件及目录操作
 ```shell
     find .    # 列出所有文件及目录
-    find . -type f -size +50M -print0 | xargs -0 du -h | sort -nr    # 列出大于50M的文件 | 且显示文件大小 | 并排序
+    find . -type f -size +50M -print0 | xargs -0 du -h | sort -nr    # 列出大于50M的文件 | 且显示文件大小 | 并排序，但没有>50m的会列出全部
     find . -type d -name ".svn" | xargs rm -rf    # 找出所有“.svn”文件夹 | 并删除
     find . -name .DS_Store | xargs rm    # 找出所有“.DS_Store”文件 | 并删除
     find /data/logs/nginx -type f -name "*.gz" -ctime -5 | xargs zcat | grep 'HTTP/1.1" 500'
