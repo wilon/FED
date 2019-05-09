@@ -44,10 +44,6 @@ after_script:
   - git commit -m "Travis CI Auto Commit" &
   - git push --force origin master
 
-cache:
-  directories:
-    - node_modules
-
 notifications:
   email:
     recipients:
