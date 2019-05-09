@@ -13,6 +13,10 @@ sudo: required
 node_js:
   - "node"
 
+cache:
+  directories:
+    - node_modules
+
 before_install:
   - sudo add-apt-repository -y ppa:dhor/myway
   - sudo apt-get -qq update
