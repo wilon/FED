@@ -11,5 +11,3 @@ nohup.out
 .DS_Store
 
 composer.phpar
-
-package-lock.json

@@ -169,10 +169,10 @@ gulp.task('revhtml', function() {
         .pipe(gulp.dest('./cache/'));
 });
 gulp.task('watch', gulp.series('default', function() {
-    gulp.watch('data/*.md', ['revmd']);
-    gulp.watch('src/javascripts/*.js', ['revjs']);
-    gulp.watch(['src/stylesheets/*.css', 'src/images/*.png'], ['revcss']);
-    gulp.watch('src/index.html', ['revhtml']);
+    gulp.watch('data/*.md', gulp.series('revmd'));
+    gulp.watch('src/javascripts/*.js', gulp.series('revjs'));
+    gulp.watch(['src/stylesheets/*.css', 'src/images/*.png'], gulp.series('revcss'));
+    gulp.watch('src/index.html', gulp.series('revhtml'));
 }));
 
 // server任务
@@ -186,10 +186,13 @@ gulp.task('server', gulp.series('watch', function(done) {
     };
 
     sync.watch('**', watchOptions, function(event, file) {
+        console.log(file)
         return sync.reload(path.basename(file));
     });
     sync.init({
-        server: './',
+        server: {
+            baseDir: './'
+        },
         watchOptions: watchOptions,
         reloadOnRestart: true,
         open: false
