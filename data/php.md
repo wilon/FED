@@ -22,7 +22,9 @@
     ^1.2        # ^ 锁定不允许变的第一位，1.xx - 1.99.99
     >= 1.3 <1.6、>=1.3 | >=1.7 、3.0|4.0    # 版本控制在某些范围
     =1.2.34 或者 1.2.34    # 指定了具体的版本号
-    composer show    # 显示当前安装的包及版本
+    composer show       # 显示当前安装的包及版本
+    composer update     # 会根据 composer.json 更新最新版，开发时使用
+    composer install    # 会根据 composer.lock 安装指定版本，生产环境使用，最好提交到 git 库，使项目保持一致
 ```
 
 ### Laravel DB 操作技巧
