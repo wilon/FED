@@ -121,7 +121,7 @@
 
 ### docker run param
 ```shell
-    -d    # 使用于服务型，containter将会运行在后台模式(Detached mode)。此时所有I/O数据只能通过网络资源或者共享卷组来进行交互。注意：--rm 和 -d不能共用！
+    -d      # 使用于服务型，containter将会运行在后台模式(Detached mode)。此时所有I/O数据只能通过网络资源或者共享卷组来进行交互。注意：--rm 和 -d不能共用！
     --rm    # 使用执行命令型，在container结束时自动清理其所产生的数据。注意：--rm 和 -d不能共用！
     --restart=always    # 随docker服务自启动
 ```
@@ -287,7 +287,8 @@
     ps aux[|grep nginx]    # 查看当前系统所有运行的进程
     uname -a    # 内核版本
     cat /etc/issue    # 系统信息
-    cat /proc/version    # 系统详情
+    cat /proc/version    # 系统版本
+    cat /etc/*-release    # 系统详情
 ```
 
 ### 查看文件夹信息

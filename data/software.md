@@ -79,9 +79,6 @@
     # SQLyog
     1. 永久试用：HKEY_CURRENT_USER\\SOFTWARE 对应的权限锁死；
     2. 字体改为Consolas,14px；
-    # Datagrip
-    <a href="http://idea.lanyus.com/">http://idea.lanyus.com/</a>
-    <a href="https://hub.docker.com/r/woailuoli993/jblse/">https://hub.docker.com/r/woailuoli993/jblse/</a>
 ```
 
 ### Sublime Text 更换 package 包源
@@ -119,12 +116,6 @@
     ⌘ shift [    # 切换到左边的标签
     alt shift ↓    # 重复当前行
     ⌘ k  ⌘ s        # 设置快捷键
-
-    # 需改
-    ⌘ d   # 重复当前行
-    ⌘ e   # 删除行
-    ⌘ 2   # 打开上一个编辑器
-    ⌘ 3   # 打开下一个编辑器
 
     # 光标移动
     On Windows:
