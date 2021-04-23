@@ -47,10 +47,10 @@
 ```
 
 ### 微信资源搜集
-```html
-    <a href="https://mp.weixin.qq.com/wiki/8/f9a0b8382e0b77d87b3bcc1ce6fbc104.html">公众号验证token方法</a>
-    头像地址（大）：http://wx.qlogo.cn/mmopen/PZI7pLaVibDOjmMHibk6NialWiaLru5XVlTfV207cH6bszhHHicE1Tr4tkF3wyZTvnYdbB2bbhtHxeN77icDalTJ1fOgfye44UUw7a/0
-    头像地址（小）：http://wx.qlogo.cn/mmopen/PZI7pLaVibDOjmMHibk6NialWiaLru5XVlTfV207cH6bszhHHicE1Tr4tkF3wyZTvnYdbB2bbhtHxeN77icDalTJ1fOgfye44UUw7a/46
+```md
+公众号验证token方法： https://mp.weixin.qq.com/wiki/8/f9a0b8382e0b77d87b3bcc1ce6fbc104.html<br>
+头像地址（大）： http://wx.qlogo.cn/mmopen/PZI7pLaVibDOjmMHibk6NialWiaLru5XVlTfV207cH6bszhHHicE1Tr4tkF3wyZTvnYdbB2bbhtHxeN77icDalTJ1fOgfye44UUw7a/0<br>
+头像地址（小）： [](http://wx.qlogo.cn/mmopen/PZI7pLaVibDOjmMHibk6NialWiaLru5XVlTfV207cH6bszhHHicE1Tr4tkF3wyZTvnYdbB2bbhtHxeN77icDalTJ1fOgfye44UUw7a/46)
 ```
 
 ### 比较好的密码存储处理
@@ -58,6 +58,9 @@
     // sha1/md5都行
     $salt = sha1(uniqid(mt_rand(), true));
     $pwdDb = sha1($salt . sha1($pwdUser) . KEY);
+    // 正确做法
+    $pwdDb = password_hash('pwd', PASSWORD_DEFAULT);
+    $verify = password_verify('pwd', $pwdDb);
 ```
 
 ### PHP time() date() strtotime()日期函数总结
@@ -187,7 +190,7 @@
     sprintf("%04d", 13);    // 补全4位：0013
 ```
 
-### 编码问题
+### ASCII 编码问题
 ```php
     /**
      *|————————————————————————————————————————————————————————————|
@@ -231,25 +234,25 @@
 ```php
     /**
     * html字符串处理
-    *|———————————————————————————————————————|
-    *| 字符 |  描述   |  html实体    |         |
-    *|     |  空格   |  &amp;nbsp;  |         |
-    *|  <  |  小于号 |  &amp;lt;    | special |
-    *|  >  |  大于号 |  &amp;gt;    | special |
-    *|  &  |  和号   |  &amp;amp;   | special |
-    *|  \" |  引号   |  &amp;quot;  | special |
-    *|  '  |  撇号   |  &amp;apos;  | special |
-    *|  ￠ |  分     |  &amp;cent;  |         |
-    *|  £  |  镑     |  &amp;pound; |         |
-    *|  ¥  |  日圆   |  &amp;yen;   |         |
-    *|  €  |  欧元   |  &amp;euro;  |         |
-    *|  §  |  小节   |  &amp;sect;  |         |
-    *|  ©  |  版权   |  &amp;copy;  |         |
-    *|  ®  |  商标   |  &amp;reg;   |         |
-    *|  ™  |  商标   |  &amp;trade; |         |
-    *|  ×  |  乘号   |  &amp;times; |         |
-    *|  ÷  |  除号   |  &amp;divide;|         |
-    *|———————————————————————————————————————|
+    *|————————————————————————————————————|
+    *| 字符 |  描述  |  html实体 |         |
+    *|     |  空格   |  & nbsp;  |         |
+    *|  <  |  小于号 |  & lt;    | special |
+    *|  >  |  大于号 |  & gt;    | special |
+    *|  &  |  和号   |  & amp;   | special |
+    *|  \" |  引号   |  & quot;  | special |
+    *|  '  |  撇号   |  & apos;  | special |
+    *|  ￠ |  分     |  & cent;  |         |
+    *|  £  |  镑     |  & pound; |         |
+    *|  ¥  |  日圆   |  & yen;   |         |
+    *|  €  |  欧元   |  & euro;  |         |
+    *|  §  |  小节   |  & sect;  |         |
+    *|  ©  |  版权   |  & copy;  |         |
+    *|  ®  |  商标   |  & reg;   |         |
+    *|  ™  |  商标   |  & trade; |         |
+    *|  ×  |  乘号   |  & times; |         |
+    *|  ÷  |  除号   |  & divide;|         |
+    *|———————————————————————————————————|
     */
     $str1 = html_entity_decode($str);       // html实体 --> 字符
     $str2 = htmlentities($str);             // 字符 --> html实体
@@ -257,7 +260,7 @@
     $str4 = htmlspecialchars($str);         // special 字符 --> html实体
 ```
 
-### 编码问题
+### 字符编码问题
 ```php
     // 1. PHP文件的编码格式， gbk->utf-8
     $content = iconv('GBK', 'UTF-8', $content);     // 推荐
@@ -273,7 +276,8 @@
 ### PHP语言结构，非函数，比函数快
 ```php
     echo print die isset unset include require array list empty
-    // 注意，include_once()是函数; 注意，require_once()是函数;
+    // 注意，include_once()是函数;
+    // 注意，require_once()是函数;
 ```
 
 ### empty与isset
@@ -342,21 +346,22 @@
     // list()现在支持键名
 ```
 
-### 文件上传后print_r($_FILES);
+### 文件上传后数据
 ```php
-    Array (
-        [pic] => Array (     //picname为前端表单name:&lt;input type=\"file\" name=\"pic\"/&gt;
-            [name] => iphone5.jpg
-            [type] => image/jpeg
-            [tmp_name] => C:\\Windows\\Temp\\phpA6ED.tmp
-            [error] => 0
-            [size] => 89470
-        )
-    )
+    print_r($_FILES);
+    // Array (
+    //     [pic] => Array (     //picname为前端表单name:&lt;input type=\"file\" name=\"pic\"/&gt;
+    //         [name] => iphone5.jpg
+    //         [type] => image/jpeg
+    //         [tmp_name] => C:\\Windows\\Temp\\phpA6ED.tmp
+    //         [error] => 0
+    //         [size] => 89470
+    //     )
+    // );
 ```
 
 ### 面试必知必会
-```php
+```md
     · redis、memcached区别
     · cookie、session区别
     · 手写冒泡排序、快速排序

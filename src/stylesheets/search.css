@@ -10,7 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 body {
-    font: 18px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    font: 18px/1.5 "Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
     line-height: 1;
     color: #000;
     background: #fff;
@@ -163,33 +163,33 @@ a:hover {
     font-style: inherit
 }
 
-.sitelist li {
+.sitelist .li_item {
     padding: .3em .3em;
     position: relative;
 }
 
-.sitelist li:after {
+.sitelist .li_item:after {
     content: '';
     display: block;
     border-bottom: 1px solid #eee;
     margin-top: 10px
 }
 
-.sitelist li .title {
+.sitelist .li_item .title {
     padding-left: 5px;
     margin-right: 10px;
 }
 
-.sitelist li .title a {
+.sitelist .li_item .title a {
     font-weight: bold;
     color: #000;
 }
 
-.sitelist li .title a:hover {
+.sitelist .li_item .title a:hover {
     color: #f00
 }
 
-.sitelist li .title img {
+.sitelist .li_item .title img {
     height: 18px;
     width: 18px;
     vertical-align: middle;
@@ -198,7 +198,7 @@ a:hover {
     background-color: #ffffff
 }
 
-.sitelist li .description {
+.sitelist .li_item .description {
     padding-left: 5px;
     margin: 2px 0 0 0;
     line-height: 1.3;
@@ -206,12 +206,12 @@ a:hover {
     clear: both
 }
 
-.sitelist li .tags {
+.sitelist .li_item .tags {
     font-size: .8em;
     float: right;
 }
 
-.sitelist li .tags span {
+.sitelist .li_item .tags span {
     display: inline-block;
     background-color: #d6d6d6;
     padding: 0 .3em 0 .3em;
@@ -221,7 +221,7 @@ a:hover {
     margin: 0 .2em
 }
 
-.sitelist li .des {
+.sitelist .li_item .des {
     color: #848484;
     font-size: .8em
 }
@@ -304,6 +304,23 @@ a:hover {
     color: #000;
 }
 
+#list-itme .mddiv code {
+    font: 20px/2.1 "Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+    background-color: #f6f8fa;
+    padding: .2em .4em;
+    margin: 0;
+    border-radius: 6px;
+}
+
+#list-itme .mddiv li {
+    margin: 8px;
+    list-style: disc;
+}
+
+#list-itme .mddiv p {
+    margin: 6px;
+}
+
 #list-itme a:hover {
     text-decoration: none;
     color: #FFFFFF;
@@ -327,6 +344,13 @@ a:hover {
     display: block;
     background-color: transparent;
     border-radius: 50%
+}
+.searchHighlight {
+    color:#1d1f27;
+    background-color: yellow;
+}
+.searchHighlight .hljs-comment {
+    color:#1d1f27;
 }
 
 @media screen and (max-width:479px) {

@@ -106,11 +106,17 @@
     git status    # 项目目录里
     git branch -a    # 查看所有分支，*代表本地
     git diff 文件    # 当期文件修改
+    git show    # 查看最近一次提交代码
+    git show commit_id   # 查看某一次提交代码
     git log    # 查看提交日志
     git log -p    # 查看提交日志，包含代码
     git log --graph    # 以图表形式查看分支提交日志
-    git show    # 查看最近一次提交代码
-    git show commit_id   # 查看某一次提交代码
+    git log file.php    # 查看某文件的提交记录
+    # 搜索代码片段是谁提交的，可以指定文件更快
+    git log -S "SOME_CODE"    # 搜出多个还得找
+    git log -G"<regex>"
+    git log -p | grep '^commit\s\|^\+\(.*\)SOME_CODE' | grep -v SOME_CODE -B 3
+    git log -p | grep '^commit\s\|^\+\(.*\)SOME_CODE' | grep -v '^commit\s' -B 3
 ```
 
 ### 配置一些东西

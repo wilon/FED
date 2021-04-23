@@ -32,6 +32,7 @@ gulp.task('js', function() {
     del('./static/wilonblog-*.min.js');
     return gulp.src('./src/javascripts/*.js')
         .pipe(concat('wilonblog.min.js')) // 合并
+        .pipe(gulp.dest('./static/')) // 保存
         .pipe(uglify()) // 压缩
         .pipe(rev()) // 重命名hash
         .pipe(gulp.dest('./static/')) // 保存
@@ -191,8 +192,9 @@ gulp.task('server', gulp.series('watch', function(done) {
     });
     sync.init({
         server: {
-            baseDir: './'
+            baseDir: './',
         },
+        port: 3133,
         watchOptions: watchOptions,
         reloadOnRestart: true,
         open: false

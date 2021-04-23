@@ -271,14 +271,24 @@
 
 ### curl 使用
 ```shell
-    curl -o ~/baidu.html https://www.baidu.com    # 下载到指定文件
-    curl -x 127.0.0.1:3128 https://www.google.com/humans.txt    # 指定代理
-    curl -k https://www.baidu.com    # 允许不使用证书到SSL站点
-    curl -v https://www.baidu.com    # 显示详情
-    curl -s https://www.baidu.com    # 静默模式
-    curl -d "param1=value1&param2=value2" "http://www.baidu.com"    # post请求
-    curl -l -H "Content-type: application/json" -X POST -d '{"phone":"135xxxxxxxx","password":"test"}' http://domain/apis/users.json    # json格式的post请求
-    curl http://adms.test.com/api/getUserInfo\?auth\=$(echo -n $(date +%s) | md5sum | awk '{printf $1"YOUR_KEY";}' | md5sum | awk '{printf $1;}')    # 两次 md5 的验证例子
+    # 下载到指定文件
+    curl -o ~/baidu.html https://www.baidu.com
+    # 指定代理
+    curl -x 127.0.0.1:3128 https://www.google.com/humans.txt
+    # 允许不使用证书到SSL站点
+    curl -k https://www.baidu.com
+    # 显示详情
+    curl -v https://www.baidu.com
+    # 静默模式
+    curl -s https://www.baidu.com
+    # 请求重定向
+    curl -L https://www.baidu.com
+    # post请求
+    curl -d "param1=value1&param2=value2" "http://www.baidu.com"
+    # json格式的post请求
+    curl -l -H "Content-type: application/json" -X POST -d '{"phone":"135xxxxxxxx","password":"test"}' http://domain/apis/users.json
+    # 两次 md5 的验证例子
+    curl http://adms.test.com/api/getUserInfo\?auth\=$(echo -n $(date +%s) | md5sum | awk '{printf $1"YOUR_KEY";}' | md5sum | awk '{printf $1;}')
 ```
 
 ### 查看系统信息

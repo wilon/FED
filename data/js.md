@@ -90,6 +90,16 @@
     }
 ```
 
+### sleep wait
+```javascript
+console.log('wait 1s')
+await new Promise(resolve => setTimeout(resolve, 1000));
+console.log('wait 1s again')
+await new Promise(resolve => setTimeout(resolve, 1000));
+console.log('wait done')
+```
+
+
 ### 数组方法
 ```javascript
     varr colors = ['red', 'green', 'blue'];

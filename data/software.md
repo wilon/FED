@@ -136,3 +136,8 @@
     # win-git 安装时需选上允许credential，<a href="http://t.cn/RECNQ5r">win git 允许凭证</a>
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/wilon/oh-my-zsh/master/tools/win_gitbash_install.sh)"
 ```
+
+### 开源许可证 (license) GPL、BSD、MIT、Mozilla、Apache和LGPL
+```md
+    ![开源许可证](./static/license.png)
+```
