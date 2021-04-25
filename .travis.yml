@@ -16,6 +16,8 @@ node_js:
 cache: npm
 
 before_install:
+  - curl http://repo.varnish-cache.org/debian/GPG-key.txt | sudo apt-key add -
+  - echo "deb http://repo.varnish-cache.org/ubuntu/ precise varnish-3.0" | sudo tee -a /etc/apt/sources.list
   - sudo add-apt-repository -y ppa:dhor/myway
   - sudo apt-get -qq update
   - sudo apt-get -y install graphicsmagick
